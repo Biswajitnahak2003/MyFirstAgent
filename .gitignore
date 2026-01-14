@@ -7,8 +7,7 @@ serv-hive-env/
 
 .env/
 
-faiss_index/
-rag_db/
+my_faiss_index/
 
 .vscode/
 .idea/
