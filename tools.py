@@ -11,6 +11,8 @@ def mock_lead_capture(name: str, email: str, platform: str) -> str:
     """Use this tool ONLY after collecting the user's Name, Email, and Content Platform.
     Do not call this unless you have all three pieces of information."""
     print(f"\n[SYSTEM] >>> LEAD CAPTURED: {name} | {email} | {platform}\n")
+    with open("leads.txt", "a") as f:
+        f.write(f"{name}, {email}, {platform}\n")
     return "Lead captured successfully."
 
 

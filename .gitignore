@@ -13,3 +13,6 @@ my_faiss_index/
 .idea/
 
 .ipynb_checkpoints/
+
+demo/
+leads.txt

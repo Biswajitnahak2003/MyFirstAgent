@@ -30,7 +30,6 @@ cd INTERNSHIP_ASSIGNMENT
 
 ```Bash
 python -m venv venv
-# Windows:
 venv\Scripts\activate
 ```
 3. Install Dependencies
@@ -41,7 +40,7 @@ pip install -r requirements.txt
 4. Configure Environment Variables Create a .env file in the root directory and add your Google API Key:
 
 ```Bash
-GOOGLE_API_KEY=your_actual_api_key_here
+GOOGLE_API_KEY=your_actual_api_key
 ```
 5. Initialize the Knowledge Base Run this command once to build the local FAISS vector store:
 
@@ -53,3 +52,21 @@ python rag.py
 ```Bash
 python main.py
 ```
+
+# Architecture Explanation
+## Why LangGraph?
+I chose LangGraph  because this project requires a cyclic workflow (Agent → Tool → Agent) rather than a linear execution also as i am familiar with LangGraph.
+
+Reasoning Loops: LangGraph allows the agent to "think" (call a tool), "act" (execute the tool), and "observe" (read the output) in a loop until the task is complete.
+
+Control Flow: It provides precise control over conditional edges (e.g., deciding whether to call the RAG tool or the Lead Capture tool based on user intent).
+
+## State Management
+State is managed using LangGraph's MessagesState with the "add_messages" reducer.
+
+Persistence: I used a MemorySaver checkpointer used to persist the state.
+
+Session Tracking: Each conversation is tracked via a unique thread_id (e.g., user_session_1). This ensures the bot remembers the user's name from the beginning of the chat when asking for their email later.
+
+## WhatsApp Deployment
+To integrate this agent with WhatsApp, I would use a Webhook architecture connecting the WhatsApp Business API to a backend API hosting the LangGraph agent.
