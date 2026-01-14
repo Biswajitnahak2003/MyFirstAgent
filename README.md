@@ -18,3 +18,37 @@ Built using **LangGraph**, **LangChain**, and **Google Gemini 2.5 Flash**.
 ├── main.py            # Entry point for the CLI Chatbot
 ├── requirements.txt   # Project dependencies
 └── .env               # API Keys (Not included in repo)
+
+## Setup & Installation
+1. Clone the Repository
+
+```Bash
+git clone [https://github.com/your-username/autostream-agent-assignment.git](https://github.com/your-username/autostream-agent-assignment.git)
+cd autostream-agent-assignment
+
+2. Create a Virtual Environment (Optional but Recommended)
+
+```Bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+
+3. Install Dependencies
+
+```Bash
+pip install -r requirements.txt
+
+4. Configure Environment Variables Create a .env file in the root directory and add your Google API Key:
+
+```Bash
+GOOGLE_API_KEY=your_actual_api_key_here
+
+5. Initialize the Knowledge Base Run this command once to build the local FAISS vector store:
+
+```Bash
+python rag.py
+
+6. Run the Agent Start the interactive chat loop:
+
+```Bash
+python main.py
