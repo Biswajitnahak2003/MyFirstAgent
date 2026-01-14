@@ -23,8 +23,8 @@ Built using **LangGraph**, **LangChain**, and **Google Gemini 2.5 Flash**.
 1. Clone the Repository
 
 ```Bash
-git clone [https://github.com/your-username/autostream-agent-assignment.git](https://github.com/your-username/autostream-agent-assignment.git)
-cd autostream-agent-assignment
+git clone (https://github.com/Biswajitnahak2003/MyFirstAgent.git)
+cd INTERNSHIP_ASSIGNMENT
 ```
 2. Create a Virtual Environment (Optional but Recommended)
 
