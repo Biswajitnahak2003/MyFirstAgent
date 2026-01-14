@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+serv-hive-env/
+
+.env/
+
+faiss_index/
+rag_db/
+
+.vscode/
+.idea/
+
+.ipynb_checkpoints/
